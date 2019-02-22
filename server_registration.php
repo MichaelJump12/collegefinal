@@ -4,7 +4,7 @@ include_once 'config.php';
 // initializing variables
 
 // ........... $errors = array(); 
-$errors = "";
+$regErrors = "";
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -23,10 +23,11 @@ if($password == $confirmPassword) {
       header('location: home.php');
     } else { ?>
       <script type='text/javascript'>
-      alert('Email exists');
-            header('location: LoginOrSignup.php');
+        alert('Email exists');
       </script>
-    <?php }
+    <?php 
+    header('location: LoginOrSignup.php');
+    }
 } else { ?>
   <script type='text/javascript'>
   alert('passwordss not match');

@@ -33,7 +33,7 @@
         else 
         {           
             if (isset($_GET['Width']) && isset($_GET['Height'])) {       
-            echo "<h1>Your screen resolution of the screen in use is ".$_GET['Width']." x ".$_GET['Height'].".</h1><br />";       
+            echo "<h1><center>The resolution of the screen in use is ".$_GET['Width']." x ".$_GET['Height'].".</center></h1><br />";       
             }
         }
        ?>
@@ -62,49 +62,49 @@ if (isset($_POST['text']))
 
 ?>
 
-        <center>
-            <h3> FILE UPLOADING </h3>
-            <hr>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <label for="fileToUpload">Filename:</label>
-                <input type="file" name="fileToUpload" id="fileToUpload" required/>
-                <br
-                >
-                <input type="submit" name="btn-submitFile" value="Submit" />
-            </form>
-        </center>
 
-        <center>
-            <div class="table">
-                <table>
-                    <tr>
-                        <th>Filename</th>
-                        <th>Filesize</th>
-                        <th>Filetype</th>
-                        <th>Download File</th>
-                    </tr>
-                    <?php 
+        <h3> FILE UPLOADING </h3>
+        <hr>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="fileToUpload">Filename:</label>
+            <input type="file" name="fileToUpload" id="fileToUpload" required />
+
+            <br>
+            <input type="submit" name="btn-submitFile" value="Submit" />
+        </form>
+
+
+
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Filename</th>
+                    <th>Filesize</th>
+                    <th>Filetype</th>
+                    <th>Download File</th>
+                </tr>
+                <?php 
     while($fileRow = mysqli_fetch_assoc($findFilesResult)) {
         include_once 'filesize.php';
         ?>
-                    <tr>
-                        <td><?php echo $fileRow['filename']; ?></td>
-                        <td><?php echo $fileRow['filesize']; ?></td>
-                        <td><?php echo $fileRow['filetype']; ?></td>
-                        <td><a href="<?php echo $fileRow['storagefile']; ?>" target="blank">Download</a></td>
-                    </tr>
-                    <?php } ?>
-                </table>
-        </center>
-        <footer class="footer">
-            <h3> Michael Kapranos &copy; <?php echo date("Y"); ?> </h3>
-            <p><a href="/home.php">Log out, back to login page</a></p>
-        </footer>
-</div>
+                <tr>
+                    <td><?php echo $fileRow['filename']; ?></td>
+                    <td><?php echo $fileRow['filesize']; ?></td>
+                    <td><?php echo $fileRow['filetype']; ?></td>
+                    <td><a href="<?php echo $fileRow['storagefile']; ?>" target="blank">Download</a></td>
+                </tr>
+                <?php } ?>
+            </table>
+            </center>
+            <footer class="footer">
+                <h3> Michael Kapranos &copy; <?php echo date("Y"); ?> </h3>
+                <p><a href="/LoginOrSignup.php">Log out, back to login page</a></p>
+            </footer>
+        </div>
 
 
 
 
-</body>
+    </body>
 
 </html>

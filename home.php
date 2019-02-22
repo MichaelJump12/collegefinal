@@ -16,6 +16,7 @@ session_start();
 
 <body>
     <div class="container">
+        
         <header>
             <h1>Assignment 2</h1>
             <p>The log in page.</p>

@@ -25,7 +25,7 @@ if ($rowcount = mysqli_num_rows($result)) {
 
     
     $_SESSION["error"] = $error;
-    header("Location: home.php" );
+    header("Location: LoginOrSignup.php" );
 }
 
 ?>
