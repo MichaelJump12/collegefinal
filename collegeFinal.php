@@ -81,7 +81,7 @@ if (isset($_POST['text']))
                         <th>Filename</th>
                         <th>Filesize</th>
                         <th>Filetype</th>
-                        <th>Download</th>
+                        <th>Download File</th>
                     </tr>
                     <?php 
     while($fileRow = mysqli_fetch_assoc($findFilesResult)) {
