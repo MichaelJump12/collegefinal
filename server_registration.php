@@ -23,16 +23,18 @@ if($password == $confirmPassword) {
     } else { ?>
       <script type='text/javascript'>
         alert('Email exists');
+        window.location.href = "LoginOrSignup.php";
       </script>
     <?php 
-    header('location: LoginOrSignup.php');
+    // header('location: LoginOrSignup.php');
     }
 } else { ?>
   <script type='text/javascript'>
-  alert('passwordss not match');
+  alert("passwords don't match");
+  window.location.href = "LoginOrSignup.php";
   </script>
 <?php 
-  header('location: LoginOrSignup.php');
+  // header('location: LoginOrSignup.php');
 
 }
 }

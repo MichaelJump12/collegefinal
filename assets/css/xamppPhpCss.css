@@ -7,22 +7,21 @@ header {
   color: white;
   text-align: center;
   padding: 2px;
-  border: 5px;
   border-radius: 20px;
   margin-bottom: 15px;  
 }
+
 .form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding-top: 1px;
 }
+
 .form .register-form {
   display: none;
 }
+
 .namesList {
   color: rgb(185, 67, 185);
 }
@@ -41,8 +40,7 @@ header {
   height: 82px; 
   background-color: black;
   text-align: center;
-  color:white;
-  
+  color:white; 
 }
 
 table {
@@ -76,16 +74,9 @@ input[type=password], input[type=email] {
   opacity: 0.9;
   height: 56px; 
 }
- 
+
 .registerbtn:hover {
   opacity: 1;
-}
-  
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-  height: 44px;
-  padding: 3px;
 }
 
 input[type=submit] {

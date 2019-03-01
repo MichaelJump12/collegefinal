@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 <html lang="en">
 
 <head>
-    <title>basic.html</title>
+<title>UploadAFile</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="assets/css/xamppPhpCss.css" />
 
@@ -34,7 +34,7 @@ if (!isset($_SESSION['email'])) {
         else 
         {           
             if (isset($_GET['Width']) && isset($_GET['Height'])) {       
-            echo "<h1><center>The resolution of the screen in use is ".$_GET['Width']." x ".$_GET['Height'].".</center></h1><br />";       
+                echo "<h1><center>The resolution of the screen in use is ".$_GET['Width']." x ".$_GET['Height'].".</center></h1><br />";       
             }
         }
         $agent = $_SERVER["HTTP_USER_AGENT"];
@@ -51,26 +51,26 @@ if (!isset($_SESSION['email'])) {
 
         <?php
 
-// configuration
-$url = 'http://domain.com/backend/editor.php';
-$file = '/path/to/txt/file';
+            // configuration
+            $url = 'http://domain.com/backend/editor.php';
+            $file = '/path/to/txt/file';
 
-// check if form has been submitted
-if (isset($_POST['text']))
-{
-    // save the text contents
-    file_put_contents($file, $_POST['text']);
+            // check if form has been submitted
+            if (isset($_POST['text']))
+            {
+                // save the text contents
+                file_put_contents($file, $_POST['text']);
 
-    // redirect to form again
-    header(sprintf('Location: %s', $url));
-    printf('<a href="%s">Moved</a>.', htmlspecialchars($url));
-    exit();
-}
+                // redirect to form again
+                header(sprintf('Location: %s', $url));
+                printf('<a href="%s">Moved</a>.', htmlspecialchars($url));
+                exit();
+            }
 
-// read the textfile
-// $text = file_get_contents($file);
+            // read the textfile
+            // $text = file_get_contents($file);
 
-?>
+        ?>
 
 
         <h3> FILE UPLOADING </h3>
@@ -82,8 +82,6 @@ if (isset($_POST['text']))
             <br>
             <input type="submit" name="btn-submitFile" value="Submit" />
         </form>
-
-
 
         <div class="table">
             <table>
