@@ -68,5 +68,5 @@ if (isset($_SESSION['email'])) {
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="Login_Signup.js">
     </script>
-    <script src="test.js">
-    < /html>
+    <script src="test.js"> </script>
+    </html>

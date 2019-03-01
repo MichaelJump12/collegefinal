@@ -10,13 +10,13 @@ if (!isset($_SESSION['email'])) {
 <html lang="en">
 
 <head>
-<title>UploadAFile</title>
+    <title>UploadAFile</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="assets/css/xamppPhpCss.css" />
 
 </head>
 
-<div class="container">
+<div class="containerCollegeFinal">
 
     <body>
         <header>
@@ -103,12 +103,13 @@ if (!isset($_SESSION['email'])) {
                 </tr>
                 <?php } ?>
             </table>
-            
-            <footer class="footer">
-                <h3> Michael Kapranos &copy; <?php echo date("Y"); ?> </h3>
-                <p><a href="/logout.php"> Log out, back to login page</a></p>
-            </footer>
+            <p class="message"><a href="/randomGame.php">Random game</a></p>
         </div>
+        <footer class="footer">
+            <h3> Michael Kapranos &copy; <?php echo date("Y"); ?> </h3>
+            <p><a href="/logout.php"> Log out, back to login page</a></p>
+        </footer>
     </body>
+</div>
 
 </html>

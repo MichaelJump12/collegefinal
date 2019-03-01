@@ -33,10 +33,18 @@ header {
   margin-left: auto;
 }
 
-.footer{
-  position: fixed;; 
-  bottom: 0px;
+.containerCollegeFinal {
+  padding-top: 8px;
   width: 82%;
+  margin-bottom: 90px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer{
+  position: fixed; 
+  bottom: 0px;
+  width: 80.9%;
   height: 82px; 
   background-color: black;
   text-align: center;
