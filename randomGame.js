@@ -36,6 +36,10 @@ function displayVictoryMess(moves) {
   document.getElementById("moves").innerHTML = "You Moved " + moves + " Steps.";
   toggleVisablity("Message-Container");  
 }
+function displayVictoryMess(time) {
+    document.getElementById("time").innerHTML = "you took " + time + " seconds.";
+    toggleVisablity("Message-Container");  
+  }
 
 function toggleVisablity(id) {
   if (document.getElementById(id).style.visibility == "visible") {
@@ -569,7 +573,7 @@ window.onresize = function() {
 };
 
 function makeMaze() {
-  //document.getElementById("mazeCanvas").classList.add("border");
+  document.getElementById("mazeCanvas").classList.add("border");
   if (player != undefined) {
     player.unbindKeyDown();
     player = null;
@@ -585,3 +589,58 @@ function makeMaze() {
   }
 }
 
+// function startTimer(){
+//     var counter = 80;
+//     document.getElementById("startClock").style.display="none";
+//     var myTimer = setInterval(function() {
+//       counter--;
+//       if (counter >= 0) {
+//         span = document.getElementById("count");
+//         span.innerHTML = counter;
+//       }
+//       if (counter === 0) {
+//           alert('sorry, out of time');
+          
+         
+//             player.unbindKeyDown();
+          
+//           move = false;
+//       }
+function startTimer(){
+  var counter = 3;
+  var e = document.getElementById("diffSelect");
+  document.getElementById("startClock").style.display="none";
+  difficulty = e.options[e.selectedIndex].value;
+  alert(difficulty);
+counter = difficulty;
+  
+  var myTimer = setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+        alert('sorry, out of time');
+        
+       
+          player.unbindKeyDown();
+        
+        move = false;
+    }
+
+      var reset = document.querySelector('[data-reset="resetClock"]');
+
+      if(reset.addEventListener('click', (e) => {
+        counter = difficulty;
+        
+      }));     
+
+    }, 1000);
+  }
+  
+
+
+  $("#startClock").click(function(){
+    startTimer();
+   });

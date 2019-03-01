@@ -22,7 +22,7 @@ body {
     transition-property: opacity;
     transition-duration: 1s;
     transition-timing-function: linear;
-    
+   
     opacity: 0;
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.30);
@@ -52,20 +52,21 @@ select {
     text-decoration: none;
     appearance: none;
 }
-    &:hover {
+    :hover {
         background-color: rgba(0, 0, 0, 0.70);
     }
-    &:active {
+    :active {
         background-color: black;
     }
-    &:focus {
+    :focus {
         outline: none;
     }
 
 
 
-
-
+.custom-select {
+    display: inline-block;
+}
     select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -101,7 +102,13 @@ select {
     }
 
 
-
+#page {
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
     #menu {
         margin: auto;
         padding: 10px;
