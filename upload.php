@@ -51,6 +51,6 @@ if(isset($_POST["btn-submitFile"]))
 }
 
 ?> 
-</center>
+
 </body>
 </html>

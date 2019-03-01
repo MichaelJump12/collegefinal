@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if (isset($_SESSION['email'])) {
+    header("Location: collegeFinal.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -9,7 +13,6 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/xamppPhpCss.css" />
-
 </head>
 
 <body>
@@ -47,8 +50,10 @@ session_start();
                     <input type="password" name="password" placeholder="Enter Password" required />
 
                     <br>
-                    <button  type="submit" name="btn-login" 
-                        class="login_signup_buttons">Log in here</button>
+                   
+                   
+                    <button
+                     type="submit" name="btn-login" class="login_signup_buttons">Log in here</button>
                     <?php
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
@@ -58,7 +63,7 @@ session_start();
                     <p class="message">Not registered? <a href="#">Create an account</a></p>
                 </form>
             </div>
-
+            
         </body>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

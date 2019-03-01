@@ -1,11 +1,11 @@
-<?
+<?php
+
 session_start();
-session_unset();
 session_destroy();
 
-var_dump("test");
-die;
+header("Location: LoginOrSignup.php");
 
-header("Location: /collegeFinal.php");
-exit();
+
+
+
 ?>

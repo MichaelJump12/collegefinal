@@ -1,7 +1,10 @@
 <?php
+ session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: LoginOrSignup.php");
+}
     include_once 'config.php';
-    include_once 'query.php';
-    
+    include_once 'query.php';    
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -18,8 +21,6 @@
     <body>
         <header>
             <h1>Assignment 2</h1>
-
-
         </header>
         <?php
         if(!isset($_GET['screen_check']))
@@ -36,6 +37,15 @@
             echo "<h1><center>The resolution of the screen in use is ".$_GET['Width']." x ".$_GET['Height'].".</center></h1><br />";       
             }
         }
+        $agent = $_SERVER["HTTP_USER_AGENT"];
+        echo $_SERVER['HTTP_USER_AGENT'];
+        $browser = get_browser();
+        print_r($browser);
+
+        if (preg_match('/Chrome[\/\s](\d+\.\d+)/', $agent) ) {
+            echo  "<br><br><br>"
+            ."You're using Chrome";
+          }
        ?>
 
 
@@ -84,9 +94,9 @@ if (isset($_POST['text']))
                     <th>Download File</th>
                 </tr>
                 <?php 
-    while($fileRow = mysqli_fetch_assoc($findFilesResult)) {
-        include_once 'filesize.php';
-        ?>
+                    while($fileRow = mysqli_fetch_assoc($findFilesResult)) {
+                    include_once 'filesize.php';
+                ?>
                 <tr>
                     <td><?php echo $fileRow['filename']; ?></td>
                     <td><?php echo $fileRow['filesize']; ?></td>
@@ -95,16 +105,12 @@ if (isset($_POST['text']))
                 </tr>
                 <?php } ?>
             </table>
-            </center>
+            
             <footer class="footer">
                 <h3> Michael Kapranos &copy; <?php echo date("Y"); ?> </h3>
-                <p><a href="/LoginOrSignup.php">Log out, back to login page</a></p>
+                <p><a href="/logout.php"> Log out, back to login page</a></p>
             </footer>
         </div>
-
-
-
-
     </body>
 
 </html>

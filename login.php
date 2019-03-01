@@ -9,18 +9,12 @@ $password = $_POST['password'];
 $query = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
 $conn = mysqli_connect("localhost","root","","collegeFinal");
 $result = mysqli_query($conn, $query);
-// $availableLogin = 0;
 $error = "username/password incorrect";
-echo $email;
-echo $password;
-
 
 if ($rowcount = mysqli_num_rows($result)) {     
-    $_SESSION[$email] = 'Test';
-    // $_COOKIE[$email] = 'Test';
-    $error = "";
-    $_SESSION["error"] = $error;
-    header("Location: collegeFinal.php");
+    
+    $_SESSION["email"] = $email;
+    header("Location: loginSpinner.php");
 } else {
 
     

@@ -18,9 +18,8 @@ if($password == $confirmPassword) {
     $query = "INSERT INTO users (email, password) VALUES('$email', '$password')";
     $result = mysqli_query($con, $query);
     if($result) {
-      $_SESSION['email'] = $email;
-      $_SESSION['success'] = "You are now logged in";
-      header('location: home.php');
+      
+      header('location: LoginOrSignup.php');
     } else { ?>
       <script type='text/javascript'>
         alert('Email exists');
