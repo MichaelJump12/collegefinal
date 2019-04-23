@@ -11,37 +11,37 @@
     top: 0;
     text-align:center;
     display: flex;
-
-   
-  }
+rdgdr
+   rdgrds
+  }rgedr
 
   .sphere{
     color: white;
     font-family: Droid sans;
-    font-size: 100px;
+    font-size: 100px;fhtyfh
     text-align: center;
     margin-top: 20.3%;
     height: 100%;
     width: 100%;
     margin-bottom: auto;  
   }
-  
+  tgfhbf
 .spinner .sphere{
- 
-    width: 70px;
+ drgdrg
+    width: 70px;gthg
     text-align: center;
     margin-top: 30%;
     margin-bottom: auto;
     margin-left: 0;
     margin-right: auto;
   }
-  
+  rgdgr
   .spinner > div {
     width: 18px;
     height: 18px;
     background-color: white;
-  
-   
+  drgdr
+   dgdfg
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;

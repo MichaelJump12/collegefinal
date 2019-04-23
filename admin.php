@@ -6,9 +6,13 @@ session_start();
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     if (isset($_POST['delete_id'])) {
-        $id = $_POST['delete_id'];
-
-        header('Location: ' . $actual_link); die;
+        
+        $id = $_POST['delete_id']; //sanitize
+       
+        $query = ("DELETE FROM `users` WHERE `users`.`id` = ${id}");
+        $result = mysqli_query($con, $query);
+        // die;
+        header('Location: ' . $actual_link);
     }
 
     $findUser = "SELECT * FROM users";
@@ -34,7 +38,7 @@ session_start();
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>

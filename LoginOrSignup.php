@@ -61,9 +61,9 @@ if (isset($_SESSION['email'])) {
                     <p class="message">Not registered? <a href="#">Create an account</a></p>
                 </form>
             </div>
-
         </body>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="Login_Signup.js">

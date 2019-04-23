@@ -49,28 +49,6 @@ if (!isset($_SESSION['email'])) {
        ?>
 
 
-        <?php
-
-            // configuration
-            $url = 'http://domain.com/backend/editor.php';
-            $file = '/path/to/txt/file';
-
-            // check if form has been submitted
-            if (isset($_POST['text']))
-            {
-                // save the text contents
-                file_put_contents($file, $_POST['text']);
-
-                // redirect to form again
-                header(sprintf('Location: %s', $url));
-                printf('<a href="%s">Moved</a>.', htmlspecialchars($url));
-                exit();
-            }
-
-            // read the textfile
-            // $text = file_get_contents($file);
-
-        ?>
 
 
         <h3> FILE UPLOADING </h3>
@@ -83,12 +61,15 @@ if (!isset($_SESSION['email'])) {
             <input type="submit" name="btn-submitFile" value="Submit" />
         </form>
 
+
+
         <div class="table">
             <table>
                 <tr>
                     <th>Filename</th>
                     <th>Filesize</th>
                     <th>Filetype</th>
+                    <th>Edit</th>
                     <th>Download File</th>
                 </tr>
                 <?php 
@@ -99,10 +80,21 @@ if (!isset($_SESSION['email'])) {
                     <td><?php echo $fileRow['filename']; ?></td>
                     <td><?php echo $fileRow['filesize']; ?></td>
                     <td><?php echo $fileRow['filetype']; ?></td>
+                    <td><a href="textedit.php?filename=<?php echo $fileRow['filename']; ?>" target="blank"> Edit </a></td>
                     <td><a href="<?php echo $fileRow['storagefile']; ?>" target="blank">Download</a></td>
+                    
                 </tr>
                 <?php } ?>
+            <!-- not working because it isnt going into the upoads folder shown in the url after clicking edit !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <p>Link to stuff needed next time <a href="/https://www.codingforums.com/php/155942-edit-files-using-php-text-area.html">Terms & Conditions</a>.</p>
+
             </table>
+            <?php 
+           
+           
+
+?>
+
             <p class="message"><a href="/randomGame.php">Random game</a></p>
         </div>
         <footer class="footer">
