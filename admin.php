@@ -1,4 +1,5 @@
 <?php
+
 session_start();
   include( 'counter.php' ); 
   include_once 'config.php';
@@ -48,6 +49,8 @@ session_start();
     <title>Document</title>
     <title>Admin Page</title>
     <link rel="stylesheet" href="assets/css/xamppPhpCss.css" />
+    <!-- <meta http-equiv="refresh" content=".015;url=/admin.php" /> -->
+
 </head>
 <div class="containerAdminPage">
 
