@@ -4,7 +4,8 @@ if (!isset($_SESSION['email'])) {
     header("Location: LoginOrSignup.php");
 }
     include_once 'config.php';
-    include_once 'query.php';    
+    include_once 'query.php'; 
+     
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -81,19 +82,14 @@ if (!isset($_SESSION['email'])) {
                     <td><?php echo $fileRow['filesize']; ?></td>
                     <td><?php echo $fileRow['filetype']; ?></td>
                     <td><a href="textedit.php?filename=<?php echo $fileRow['filename']; ?>" target="blank"> Edit </a></td>
-                    <td><a href="<?php echo $fileRow['storagefile']; ?>" target="blank">Download</a></td>
+                    <td><a href="<?php echo $fileRow['storagefile']; ?>" target="blank" download >Download</a></td>
                     
                 </tr>
                 <?php } ?>
-            <!-- not working because it isnt going into the upoads folder shown in the url after clicking edit !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <p>Link to stuff needed next time <a href="/https://www.codingforums.com/php/155942-edit-files-using-php-text-area.html">Terms & Conditions</a>.</p>
-
+            
             </table>
-            <?php 
-           
-           
-
-?>
+            <br>
+            <?php  include( 'counter.php' ); ?>
 
             <p class="message"><a href="/randomGame.php">Random game</a></p>
         </div>

@@ -1,0 +1,19 @@
+<?php 
+
+if (!isset($_SERVER['REDIRECT_URL'])) {
+    echo 'require homepage';
+}
+
+$request = $_SERVER['REDIRECT_URL'];
+
+switch ($request) {
+    case '/college-final' :
+        require 'collegeFinal.php';
+        break;
+    case '/text-edit' :
+        require 'textedit.php';
+    break;
+    default:
+        echo 'page not found';
+        break;
+}

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+  include( 'counter.php' ); 
   include_once 'config.php';
   include_once 'query.php';  
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -38,7 +38,7 @@ session_start();
 
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -47,59 +47,62 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <title>Admin Page</title>
+    <link rel="stylesheet" href="assets/css/xamppPhpCss.css" />
 </head>
+<div class="containerAdminPage">
 
-<body>
-    <header>
-        <h1>Admin Page</h1>
-    </header>
+    <body>
+        <header>
+            <h1>Admin Page</h1>
+        </header>
 
-    <div class="table">
-        <table>
-            <tr>
-                <th>id</th>
-                <th>email</th>
-                <th>password</th>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Delete</th>
+                </tr>
 
-            </tr>
+                <?php if ($error) : ?>
+                <p><?php echo $error; ?></p>
+                <?php endif; ?>
 
-            <?php if ($error) : ?>
-                    <p><?php echo $error; ?></p>
-            <?php endif; ?>
-
-            <?php 
+                <?php 
                     while($userRow = mysqli_fetch_assoc($findUserResult)) :                   
                 ?>
 
-            <tr>
-                <td><?php echo $userRow['id']; ?></td>
+                <tr>
+                    <td><?php echo $userRow['id']; ?></td>
+                    <td><?php echo $userRow['email']; ?></td>
+                    <td>
+                        <?php echo $userRow['password']; ?>
+                    </td>
 
-                <td><?php echo $userRow['email']; ?></td>
+                    <td>
+                        <form method="POST">
+                            <input type="hidden" name="delete_id" value="<?php echo $userRow['id']; ?>" value="1" />
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
 
-                <td>
-                    <?php echo $userRow['password']; ?>
-                </td>
+                </tr>
+                <?php endwhile; ?>
+            </table>
 
-                <td>
-                    <form method="POST">
-                        <input type="hidden" name="delete_id" value="<?php echo $userRow['id']; ?>" value="1" />
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
+            <hr>
 
-            </tr>
-            <?php endwhile; ?>
-        </table>
+            <form method="POST">
 
-        <hr>
-
-        <form method="POST">
-
-            <input type="hidden" name="create_user">
-            <input type="email" name="email">
-            <input type="password" name="password">
-            <button type="submit"> Create user </button>
-        </form>
-</body>
+                <input type="hidden" name="create_user">
+                <input type="email" name="email">
+                <input type="password" name="password">
+                <button type="submit"> Create user </button>
+            </form>
+            <br><br>
+            <?php  echo "{$count} hits\n"; ?>
+    </body>
+</div>
 
 </html>
